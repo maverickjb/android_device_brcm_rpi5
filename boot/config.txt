@@ -1,0 +1,28 @@
+# Kernel
+kernel=Image
+
+# Ramdisk
+initramfs ramdisk.img followkernel
+
+# Camera
+
+# Display
+
+# Display panel
+#dtoverlay=vc4-kms-dsi-7inch
+#dtoverlay=vc4-kms-dsi-ili9881-7inch
+
+# Graphics acceleration
+dtoverlay=vc4-kms-v3d
+dtoverlay=cma,cma-320
+
+# I2C
+#dtparam=i2c_arm=on
+
+# I2S
+#dtparam=i2s=on
+
+# SPI
+#dtparam=spi=on
+
+# USB
