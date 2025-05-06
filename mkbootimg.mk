@@ -15,5 +15,5 @@ $(RPI_BOOT_OUT): $(INSTALLED_RAMDISK_TARGET)
 $(INSTALLED_BOOTIMAGE_TARGET): $(RPI_BOOT_OUT)
 	$(call pretty,"Target boot image: $@")
 	dd if=/dev/zero of=$@ bs=1M count=128
-#	mkfs.fat -F 32 -n "boot" $@
-#	mcopy -s -i $@ $(RPI_BOOT_OUT)/* ::
+	/usr/sbin/mkfs.fat -F 32 -n "boot" $@
+	/usr/bin/mcopy -s -i $@ $(RPI_BOOT_OUT)/* ::
