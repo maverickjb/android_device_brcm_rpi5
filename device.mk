@@ -19,19 +19,46 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Characteristics
 PRODUCT_CHARACTERISTICS := tv
 
+# DRM
+PRODUCT_PACKAGES += \
+	android.hardware.drm-service.clearkey
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+	android.hardware.gatekeeper@1.0-service.software
+
 # Graphics
 PRODUCT_PACKAGES += \
-    hwcomposer.drm
+	android.hardware.graphics.composer3-V3-ndk \
+	android.hardware.graphics.allocator@2.0 \
+	android.hardware.graphics.allocator@3.0 \
+	android.hardware.graphics.allocator@4.0 \
+	android.hardware.graphics.allocator-V2-ndk \
+	android.hardware.graphics.mapper@2.0 \
+	android.hardware.graphics.mapper@2.1 \
+	android.hardware.graphics.mapper@3.0 \
+	android.hardware.graphics.mapper@4.0 \
+	android.hardware.graphics.common@1.0 \
+	android.hardware.graphics.common@1.1 \
+	android.hardware.graphics.common@1.2 \
+	android.hardware.graphics.common-V5-ndk \
+	libgralloctypes \
+	libdmabufheap \
+	libdrm
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.opengles.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
+# HIDL
+PRODUCT_PACKAGES += \
+	android.hidl.allocator@1.0-service \
+	hwservicemanager
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1-service
 
-    # Ramdisk
+#PRODUCT_COPY_FILES += \
+#    hardware/interfaces/keymaster/4.1/default/android.hardware.hardware_keystore.km41.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hardware_keystore.km41.xml
+
+# Ramdisk
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/ramdisk/fstab.rpi5:$(TARGET_COPY_OUT_RAMDISK)/fstab.rpi5 \
     $(DEVICE_PATH)/ramdisk/fstab.rpi5:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rpi5 \
