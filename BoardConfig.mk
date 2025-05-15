@@ -7,6 +7,8 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
+TARGET_SUPPORTS_32_BIT_APPS := false
+
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
@@ -60,3 +62,5 @@ TARGET_NO_RECOVERY := true
 # SELinux
 BOARD_SEPOLICY_DIRS += device/brcm/rpi5/sepolicy
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
+BOARD_HAVE_BLUETOOTH := false
