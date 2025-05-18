@@ -7,9 +7,24 @@ $(call inherit-product, vendor/lineage/config/common_full_tv.mk)
 # Device
 $(call inherit-product, device/brcm/rpi5/device.mk)
 
+# Overlays
+PRODUCT_PACKAGES += \
+    AndroidTvRpiOverlay \
+    BluetoothRpiOverlay \
+    SettingsProviderTvRpiOverlay \
+    WifiRpiOverlay
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_DEVICE := rpi5
 PRODUCT_NAME := lineage_rpi5
 PRODUCT_BRAND := Raspberry
 PRODUCT_MODEL := Pi 5
 PRODUCT_MANUFACTURER := Raspberry
+
+PRODUCT_GMS_CLIENTID_BASE := android-droid-tv
+# Android TV
+#PRODUCT_PACKAGES += \
+#    DocumentsUI \
+#    LeanbackIME \
+#    TvProvision \
+#    TvSampleLeanbackLauncher

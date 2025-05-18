@@ -88,20 +88,20 @@ PRODUCT_PACKAGES += \
 	dri_gbm \
 	libgbm_mesa
 
-PRODUCT_PACKAGES += \
-	android.hardware.graphics.composer3-V3-ndk \
-	android.hardware.graphics.allocator@2.0 \
-	android.hardware.graphics.allocator@3.0 \
-	android.hardware.graphics.allocator@4.0 \
-	android.hardware.graphics.allocator-V2-ndk \
-	android.hardware.graphics.mapper@2.0 \
-	android.hardware.graphics.mapper@2.1 \
-	android.hardware.graphics.mapper@3.0 \
-	android.hardware.graphics.mapper@4.0 \
-	android.hardware.graphics.common@1.0 \
-	android.hardware.graphics.common@1.1 \
-	android.hardware.graphics.common@1.2 \
-	android.hardware.graphics.common-V5-ndk
+#PRODUCT_PACKAGES += \
+#	android.hardware.graphics.composer3-V3-ndk \
+#	android.hardware.graphics.allocator@2.0 \
+#	android.hardware.graphics.allocator@3.0 \
+#	android.hardware.graphics.allocator@4.0 \
+#	android.hardware.graphics.allocator-V2-ndk \
+#	android.hardware.graphics.mapper@2.0 \
+#	android.hardware.graphics.mapper@2.1 \
+#	android.hardware.graphics.mapper@3.0 \
+#	android.hardware.graphics.mapper@4.0 \
+#	android.hardware.graphics.common@1.0 \
+#	android.hardware.graphics.common@1.1 \
+#	android.hardware.graphics.common@1.2 \
+#	android.hardware.graphics.common-V5-ndk
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
@@ -128,6 +128,10 @@ PRODUCT_PACKAGES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service
+
+# Power
+PRODUCT_PACKAGES += \
+    com.android.hardware.power
 
 # Ramdisk
 PRODUCT_COPY_FILES += \

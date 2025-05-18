@@ -63,4 +63,11 @@ TARGET_NO_RECOVERY := true
 BOARD_SEPOLICY_DIRS += device/brcm/rpi5/sepolicy
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
+# Audio
+BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_ALSA_AUDIO := ture
+BUILD_WITH_ALSA_UTILS := ture
+
+# Bluetooth
 BOARD_HAVE_BLUETOOTH := false
+USE_CAMERA_STUB := true
