@@ -19,6 +19,10 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Characteristics
 PRODUCT_CHARACTERISTICS := tv
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 ## Configstore
 PRODUCT_PACKAGES += \
 	disable_configstore
@@ -88,21 +92,6 @@ PRODUCT_PACKAGES += \
 	dri_gbm \
 	libgbm_mesa
 
-#PRODUCT_PACKAGES += \
-#	android.hardware.graphics.composer3-V3-ndk \
-#	android.hardware.graphics.allocator@2.0 \
-#	android.hardware.graphics.allocator@3.0 \
-#	android.hardware.graphics.allocator@4.0 \
-#	android.hardware.graphics.allocator-V2-ndk \
-#	android.hardware.graphics.mapper@2.0 \
-#	android.hardware.graphics.mapper@2.1 \
-#	android.hardware.graphics.mapper@3.0 \
-#	android.hardware.graphics.mapper@4.0 \
-#	android.hardware.graphics.common@1.0 \
-#	android.hardware.graphics.common@1.1 \
-#	android.hardware.graphics.common@1.2 \
-#	android.hardware.graphics.common-V5-ndk
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2024-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml
 
@@ -142,11 +131,6 @@ PRODUCT_COPY_FILES += \
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-## Permissions (Hardware)
-PRODUCT_COPY_FILES +=  \
-	frameworks/native/data/etc/android.hardware.screen.landscape.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.screen.landscape.xml \
-	frameworks/native/data/etc/android.hardware.screen.portrait.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.screen.portrait.xml
-
 ## Permissions (Software)
 PRODUCT_COPY_FILES +=  \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml \
@@ -155,6 +139,5 @@ PRODUCT_COPY_FILES +=  \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.picture_in_picture.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.picture_in_picture.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
-    frameworks/native/data/etc/android.software.voice_recognizers.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.voice_recognizers.xml \
-	frameworks/native/data/etc/android.software.secure_lock_screen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.secure_lock_screen.xml
+    frameworks/native/data/etc/android.software.voice_recognizers.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.voice_recognizers.xml
 

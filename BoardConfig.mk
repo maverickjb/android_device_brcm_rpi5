@@ -70,4 +70,6 @@ BUILD_WITH_ALSA_UTILS := ture
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := false
+
+# Camera
 USE_CAMERA_STUB := true
